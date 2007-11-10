@@ -1,0 +1,1154 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Author" CONTENT="Cassidy.L.Lackey">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.02 [en] (WinNT; I) [Netscape]">
+   <TITLE>MobileDB Lite Instructions</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+<font size="2" face="Arial, Helvetica, sans-serif"><font size="5" face="Times New Roman, Times, serif"><b><a name="top"></a></b></font></font>
+<table width="640" border="1" cellspacing="0" cellpadding="0" align="center">
+  <tr bgcolor="#333333"> 
+    <td height="55"> 
+      <div align="center"><img src="handmark_logo.gif" width="234" height="48"></div>
+    </td>
+  </tr>
+  <tr bgcolor="#F0F0F0"> 
+    <td height="121"> 
+      <div align="center"><font size="2" face="Arial, Helvetica, sans-serif"><font size="5" face="Times New Roman, Times, serif"><font color="#660000" size="6"><b>MobileDB 
+        Lite v3.0</b></font></font><font size="5" face="Times New Roman, Times, serif"><b><br>
+        </b></font><font size="2" face="Arial, Helvetica, sans-serif" color="#660000">for 
+        the Palm Computing(R) Platform</font><font size="2" face="Arial, Helvetica, sans-serif"><font size="3"><br>
+        <br>
+        </font><i><b>Handmark Inc.</b><br>
+        </i> <a href="http://www.handmark.com">www.handmark.com</a></font></font></div>
+    </td>
+  </tr>
+  <tr valign="top"> 
+    <td height="11182"> 
+      <table width="640" border="0" cellspacing="0" cellpadding="0" align="center">
+        <tr valign="top" bgcolor="#F0F0F0"> 
+          <td width="10" height="6477">&nbsp;&nbsp;</td>
+          <td width="626" bgcolor="#F0F0F0" height="6477"> 
+            <p><font size="2" face="Arial, Helvetica, sans-serif">MobileDB&#153; 
+              and MobileDB Lite&#153; <br>
+              Copyright &copy; 2001 Handmark<br>
+              All Rights Reserved</font> </p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif" color="#660000"><b>Tip 
+              #1</b></font><b><font size="2" face="Arial, Helvetica, sans-serif"> 
+              </font></b><font size="2" face="Arial, Helvetica, sans-serif">- 
+              Visit our <a href="http://www.handmark.com/databases">MobileDB database 
+              archive</a> to choose from hundreds of pre-made MobileDB databases!</font> 
+            <p><font size="2" face="Arial, Helvetica, sans-serif" color="#660000"><b>Tip 
+              #2</b></font><font size="2" face="Arial, Helvetica, sans-serif"> 
+              - If you like MobileDB, beam it to your Palm-using friend! Then 
+              use MobileDB to beam your favorite MobileDB databases!<br>
+              &nbsp; </font> 
+            <p><font size="2" face="Arial, Helvetica, sans-serif"><b>Hot Topics</b> 
+              <br>
+              &nbsp;&nbsp;&nbsp; <a href="#overview">MobileDB Lite Overview</a><br>
+              &nbsp;&nbsp;&nbsp; <a href="#sysRequire">MobileDB Lite System Requirements</a><br>
+              &nbsp;&nbsp;&nbsp; <a href="#Install">How to install MobileDB Lite 
+              and and MobileDB databases</a><br>
+              &nbsp;&nbsp;&nbsp; <a href="#Differences">Differences between MobileDB 
+              and MobileDB Lite</a><br>
+              &nbsp;&nbsp;&nbsp; <a href="#MDBTools">MobileDB Database Tools and 
+              Converters</a><br>
+              &nbsp;&nbsp;&nbsp; <a href="#ToFindMobileDBDatabases">Where to Find 
+              Existing MobileDB Databases</a><br>
+              &nbsp; <br>
+              <b>MobileDB Instructions</b> <br>
+              1.&nbsp; <a href="#overview">MobileDB Overview</a><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#features">Features</a><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#limitations">Limitations</a><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#known bugs">Known 
+              Bugs</a><br>
+              <br>
+              </font> 
+            <p><font size="2" face="Arial, Helvetica, sans-serif">2.&nbsp; Screen 
+              Instructions <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#Startup">Start 
+              Up</a><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#DatabaseList">Database 
+              List View</a><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#RecordList">Record 
+              List View</a><br>
+              </font><font size="2" face="Arial, Helvetica, sans-serif"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+              <a href="#RecordEdit">Record Details View</a><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+              &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font size="2" face="Arial, Helvetica, sans-serif"><a href="#ApplicationPrefs">MobileDB 
+              Preferences</a><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#DatabasePreferences">Database 
+              Options</a><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#SortRecords">Sort 
+              Records</a><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#FilterRecords">Filter 
+              Records</a><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#FindRecord">Find 
+              Records</a></font><font size="2" face="Arial, Helvetica, sans-serif"><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#MenuColumnWidth">Modify 
+              Column Widths</a></font><font size="2" face="Arial, Helvetica, sans-serif"> 
+              </font></p>
+            <p><font face="Arial, Helvetica, sans-serif" size="2">3. How do I...<br>
+              <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><a href="#beam">Beam 
+              a database?<br>
+              </a></font> <font size="2" face="Arial, Helvetica, sans-serif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#MobileDBLock">Lock 
+              a database?</a></font><font size="2" face="Arial, Helvetica, sans-serif"><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#MDBTools">Create 
+              a database on the PC or convert an Excel spreadsheet to a database?</a><br>
+              </font></p>
+            <p><font face="Arial, Helvetica, sans-serif" size="2"><a href="#DatabaseList"> 
+              </a></font><font size="2" face="Arial, Helvetica, sans-serif">4.&nbsp; 
+              <a href="#VersionInfo">Version Information</a></font> </p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif">5.&nbsp;&nbsp;<a href="#purchase">Purchase 
+              MobileDB </a> </font> 
+            <p><font size="2" face="Arial, Helvetica, sans-serif">6.&nbsp; <a href="#License">License</a> 
+              </font> 
+            <p><font size="2" face="Arial, Helvetica, sans-serif">7.&nbsp; <a href="#Company">Company 
+              Information</a><br>
+              &nbsp; <br>
+              &nbsp; </font>
+            <p><font size="2" face="Arial, Helvetica, sans-serif"><a href="http://www.handmark.com/databases"><br>
+              </a></font><font size="2" face="Arial, Helvetica, sans-serif"> </font> 
+            <h2> <font size="2" face="Arial, Helvetica, sans-serif"><a name="overview"></a><font size="4">MobileDB 
+              Lite Overview</font></font></h2>
+            <p><font size="2" face="Arial, Helvetica, sans-serif">MobileDB Lite 
+              for the Palm OS is the freeware, lite version of MobileDB, the award-winning 
+              database application for the Palm OS device. MobileDB Lite was designed 
+              for the Palm user that needs read-only access to any table or spreadsheet 
+              information. With the release of MobileDB Lite v3.0, Handmark has 
+              added more flexible filters and sorting functionality as well as 
+              drag-and-drop column widths.</font></p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif">Using one of 
+              the many MobileDB tools such as MobileDB-PC, MobileDB-Mac, MobileDB-Excel 
+              or MobileDB-FileMaker, users can easily create MobileDB databases 
+              from comma separated file or nearly any aother data source. &nbsp; 
+              </font></p>
+            <p><font face="Arial, Helvetica, sans-serif" size="2">If you need 
+              to create and edit databases on a Palm OS device, please try MobileDB, 
+              available at <a href="http://www.handmark.com/products/mobiledb">http://www.handmark.com/products/mobiledb</a>.</font> 
+            </p>
+            <font size="2" face="Arial, Helvetica, sans-serif"><a name="features"></a><b>Features- 
+            View up to 10 MobileDB databases on any Palm OS device.</b><br>
+            <br>
+            - Beam databases to other MobileDB and MobileDB Lite users.<br>
+            - Extensive sort, filter and search operations.<br>
+            - &quot;Lock&quot; a database to hide it from the view of others using 
+            your device.<br>
+            - View databases with up to 20 fields and 1000 characters per field.<br>
+            - Optionally include databases to be searched in the Palm global &quot;find&quot;. 
+            <br>
+            - Single-handed navigation around the entire database using hard keys.<br>
+            - Compatible with <a href="../mobiledbpc/index.html">MobileDB-PC,</a> 
+            <a href="../mobiledbexcel/index.html">MobileDB-Excel</a> and <a href="../mobiledbfm/index.html">MobileDB-FileMaker</a><br>
+            - Huge support for MobileDB databases - <a href="../../databases/index.html">hundreds 
+            available for download!</a></font><font size="2" face="Arial, Helvetica, sans-serif"><br>
+            </font><font size="2" face="Arial, Helvetica, sans-serif"></font>
+<h3> <font size="2" face="Arial, Helvetica, sans-serif"><a name="limitations"></a>Limitations</font></h3>
+            <ul>
+              <li><font face="Arial, Helvetica, sans-serif" size="2">MobileDB 
+                Lite allows only 10 databases to be accessed on the Palm OS device 
+                at one time</font></li>
+              <li><font size="2" face="Arial, Helvetica, sans-serif">Maximum of 
+                1000 characters for each data field.</font></li>
+              <li><font size="2" face="Arial, Helvetica, sans-serif"> Maximum 
+                of 20 fields per database.</font></li>
+              <li><font size="2" face="Arial, Helvetica, sans-serif">There is 
+                no known limitation to the number of records per database. However, 
+                databases over 5000 records will be a slower with searching, sorting, 
+                scrolling, etc.. </font></li>
+            </ul>
+            <p> <font size="2" face="Arial, Helvetica, sans-serif"><a name="known bugs"></a><b>Known 
+              Bugs</b></font></p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif">No Known bugs 
+              in MobileDB Lite at this time.</font></p>
+            <p><br>
+            <font size="2" face="Arial, Helvetica, sans-serif"><a name="sysRequire"></a><b>MobileDB 
+            System Requirements</b><br>
+            <br>
+              MobileDB Lite is compatible with any Palm Computing&reg; Platform 
+              device utilizing Palm OS 3.0 or newer. For a complete list of supported 
+              devices, see the <a href="http://www.handmark.com/products/mobiledb">MobileDB 
+              product page</a> on the <a href="http://www.handmark.com">Handmark</a> 
+              web site.&nbsp; Palm OS 1.0 and Palm OS 2.0 are no longer supported 
+              by MobileDB or MobileDB Lite. </font><b><font size="2" face="Arial, Helvetica, sans-serif"><br>
+            </font></b><font size="2" face="Arial, Helvetica, sans-serif">&nbsp; 
+            </font> 
+            <h3> <font size="2" face="Arial, Helvetica, sans-serif"><a name="Install"></a>How 
+              to Install MobileDB databases</font></h3>
+            <font size="2" face="Arial, Helvetica, sans-serif">Use the Palm Computing 
+            Installation tool to install the mobiledb .prc file.&nbsp; Likewise, 
+            use your Palm Computing Installation tool to install any MobileDB 
+            databases (databasename.pdb).&nbsp; For more information on using 
+            the Palm Computing Installation tool, consult your Palm device instructions 
+            or see the software installation wizard at <a href="http://www.nearlymobile.com">www.nearlymobile.com</a>. 
+            </font> 
+            <h3> <font size="2" face="Arial, Helvetica, sans-serif"><br>
+              <a name="Differences"></a>Differences between MobileDB and MobileDB 
+              Lite</font></h3>
+            <p><font size="2" face="Arial, Helvetica, sans-serif">Although MobileDB 
+              and MobileDB Lite utilize the same databases they have different 
+              levels of functionality. See the chart below for the functionality 
+              differences.</font></p>
+            <table width="100%" border="0" cellspacing="0" cellpadding="2">
+              <tr> 
+                <td width="56%"><font face="Arial, Helvetica, sans-serif" size="2"></font></td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2"><b>MobileDB 
+                    Lite</b></font></div>
+                </td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2"><b>MobileDB</b></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="56%"><font face="Arial, Helvetica, sans-serif" size="2">View 
+                  Databases</font></td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">Yes</font></div>
+                </td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">Yes</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="56%"><font face="Arial, Helvetica, sans-serif" size="2">Edit 
+                  Databases</font></td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">No</font></div>
+                </td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">Yes</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="56%"><font face="Arial, Helvetica, sans-serif" size="2">Create 
+                  Databases</font></td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">No</font></div>
+                </td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">Yes</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="56%"><font face="Arial, Helvetica, sans-serif" size="2">Clone 
+                  Databases</font></td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">No</font></div>
+                </td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">Yes</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="56%"><font face="Arial, Helvetica, sans-serif" size="2">Rename 
+                  Databases</font></td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">No</font></div>
+                </td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">Yes</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="56%"><font face="Arial, Helvetica, sans-serif" size="2">Categorize 
+                  Databases</font></td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">No</font></div>
+                </td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">Yes</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="56%"><font face="Arial, Helvetica, sans-serif" size="2"> 
+                  Supports Database Printing with <a href="http://www.handmark.com/products/printboypro">PrintBoy</a></font></td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">No</font></div>
+                </td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">Yes</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="56%"><font face="Arial, Helvetica, sans-serif" size="2">Export 
+                  to Date Book</font></td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">No</font></div>
+                </td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">Yes</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="56%"><font face="Arial, Helvetica, sans-serif" size="2">Beam 
+                  Database</font></td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">Yes</font></div>
+                </td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">Yes</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="56%"><font face="Arial, Helvetica, sans-serif" size="2">Sort, 
+                  Filter and Find Records</font></td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">Yes</font></div>
+                </td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">Yes</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="56%"><font face="Arial, Helvetica, sans-serif" size="2">Modfiy 
+                  Column Widths</font></td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">Yes</font></div>
+                </td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">Yes</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="56%"><font face="Arial, Helvetica, sans-serif" size="2">Modify 
+                  Field Definitions</font></td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">No</font></div>
+                </td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">Yes</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="56%"><font face="Arial, Helvetica, sans-serif" size="2"># 
+                  of Simultaneously Installed Databases</font></td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">10</font></div>
+                </td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">Unlimited</font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td width="56%"><font face="Arial, Helvetica, sans-serif" size="2">Compatible 
+                  with all MobileDB desktop tools</font></td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">Yes</font></div>
+                </td>
+                <td width="22%"> 
+                  <div align="center"><font face="Arial, Helvetica, sans-serif" size="2">Yes</font></div>
+                </td>
+              </tr>
+            </table>
+            <p><font size="2" face="Arial, Helvetica, sans-serif"> MobileDB Lite 
+              users must utilize a <a href="#MDBTools">MobileDB converter</a> 
+              to create MobileDB databases or <a href="#ToFindMobileDBDatabases">download 
+              existing MobileDB databases</a> from the Internet.&nbsp; There is 
+              no difference between MobileDB Lite and MobileDB databases. <br>
+              &nbsp; </font> </p>
+            <h3> <font size="2" face="Arial, Helvetica, sans-serif"><a name="MDBTools"></a>MobileDB 
+              Tools and Converters</font></h3>
+            <p><font size="2" face="Arial, Helvetica, sans-serif">There are many 
+              MobileDB tools and converters available for both PC and Macintosh. 
+              The most popular and most useful converters, are Handmark's own 
+              MobileDB-PC, MobileDB-Mac, MobileDB-Excel, and MobileDB-FileMaker. 
+              These tools allow you to create MobileDB databases on your PC or 
+              Mac then install them on your Palm OS device. Most of these tools 
+              also allow you to open the backup MobileDB databases from your Palm 
+              OS device (in your c:\palm\&lt;username&gt;\backups directory) to 
+              edit or export as a comma separated file.</font></p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif">You can find 
+              a list of all MobileDB tools at and detailed descriptions at <a href="http://www.handmark.com/products/mobiledb.html">http://www.handmark.com/products/mobiledb.html</a></font></p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif"> </font><font size="2" face="Arial, Helvetica, sans-serif">&nbsp; 
+              </font><font size="2" face="Arial, Helvetica, sans-serif"><br>
+              </font> <font size="2" face="Arial, Helvetica, sans-serif"><a name="ToFindMobileDBDatabases"></a><b>Where 
+              to Find Existing MobileDB Databases</b></font></p>
+            <font size="2" face="Arial, Helvetica, sans-serif">There are a growing 
+            number of pre-developed, generic-content MobileDB databases available 
+            for your use.&nbsp; Check out the Handmark database archive to find 
+            those of interest to you.&nbsp; The MobileDB database archive is available 
+            at&nbsp; <a href="http://www.handmark.com/databases">http://www.handmark.com/databases.</a></font> 
+            <p><font size="2" face="Arial, Helvetica, sans-serif">Remember - if 
+              you have created a database that other MobileDB users may be interested 
+              in, please send it to us so we can make it available for other users. 
+              The database submission instructions are available at <a href="http://www.handmark.com/databases">http://www.handmark.com/databases.</a></font><font size="2" face="Arial, Helvetica, sans-serif"><a href="http://www.handmark.com/databases"><br>
+              <br>
+              </a></font>
+            <p><font size="2" face="Arial, Helvetica, sans-serif"> </font><font size="2" face="Arial, Helvetica, sans-serif">&nbsp; 
+              </font> </p>
+            <h2> <font size="2" face="Arial, Helvetica, sans-serif"><a name="usage"></a><font size="4" color="#660000">Usage</font></font></h2>
+            <h3> <font size="2" face="Arial, Helvetica, sans-serif"><a name="Startup"></a><font size="3">Start 
+              up</font></font></h3>
+            <p><font size="2" face="Arial, Helvetica, sans-serif"><font size="3"><font size="2">To 
+              begin using Handmark MobileDB Lite, simply tap the appropriate icon 
+              on your application screen. </font></font></font><font size="2" face="Arial, Helvetica, sans-serif">When 
+              first installed, the MobileDB application will launch into the <i>database 
+              list view</i>.&nbsp; If you previously exited the application while 
+              in a database, the same database will be opened automatically on 
+              the next start up.&nbsp; This allows you to access the same database 
+              repeatedly without having to reselect the database. <br>
+              <br>
+              <br>
+              </font> 
+            <h3> <font size="2" face="Arial, Helvetica, sans-serif"><a name="DatabaseList"></a><font size="3">Database 
+              List View</font></font></h3>
+            <p><font size="2" face="Arial, Helvetica, sans-serif">The <i>database 
+              list view</i> allows you to select an action to perform, a database 
+              on which to perform the action, create a new database, or view the 
+              status (locked, database size, and so on) of each databases. You 
+              can only access 10 MobileDB databases utilizing MobileDB Lite. You 
+              will receive a warning each time you enter this screen with more 
+              than 10 databases.</font></p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif"><b>To</b> <b>open 
+              a database</b> for viewing or editing, tap Open, then tap the database 
+              name in the database list.&nbsp; The database appears and you will 
+              see the 'Record List' view with the database name at the top of 
+              the window. </font></p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif"><b>To</b> <b>view 
+              the database information, </b>tap Info, then tap the database you 
+              want to categorize. Tap the Category box and select an existing 
+              category or create a new category.</font></p>
+            <p><font face="Arial, Helvetica, sans-serif" size="2"><a name="beam"></a><b>To</b> 
+              <b>beam</b> <b>a database</b>, tap Beam, then tap the database name 
+              that you want to beam. The application searches for another PalmOS 
+              device, then beams the database and the other unit, asking the recipient 
+              if they would like to &quot;Accept&quot; the database. Once the 
+              database has been beamed, the action selection will returns to the 
+              default, &quot;Open.&quot; Keep in mind, that the &quot;receiving&quot; 
+              device must have MobileDB or MobileDB Lite already installed in 
+              order to access the MobileDB database. If necessary, you can beam 
+              the other user MobileDB or MobileDB Lite through the &quot;Beam&quot; 
+              menu option available on the <b>Palm OS applications menu</b>.</font></p>
+            <p><font face="Arial, Helvetica, sans-serif" size="2"><a name="delete"></a><b>To</b> 
+              <b>delete</b> <b>a database</b>, tap Delete, then tap the database 
+              you want to remove. If you have the <a href="#ApplicationPrefs">MobileDB 
+              Application Preference,</a> &quot;Confirm Database Delete&quot; 
+              checked then a confirmation dialog box appears. If you do not have 
+              the &quot;Confirm Database Delete&quot; checked then the database 
+              is automatically deleted with no confirmation. We suggest that you 
+              keep the &quot;Confirm Database Delete&quot; checked unless you 
+              need to quickly delete a lot of databases. </font></p>
+            <p><font face="Arial, Helvetica, sans-serif" size="2"><b>To</b> <b>view 
+              the database sizes, </b>on the Display DB Size drop-down list at 
+              the top of the <i>database list view</i> tap By # Records to display 
+              the number of records in each database or By Kbytes to display the 
+              space (in kilobytes) that each database takes up on your Palm OS 
+              device. Due to the overhead required to determine the sizes each 
+              time the database list view refreshes, we suggest that you keep 
+              the selection at Don't Display until you need to display the size 
+              of the databases.</font></p>
+            <p><font face="Arial, Helvetica, sans-serif" size="2"><b>To</b> <b>view 
+              the lock status </b>of all databases <b> </b>make sure the <a href="#ApplicationPrefs">MobileDB 
+              Lite Application Preference</a>, &quot;Show Lock Icons&quot; is 
+              checked. This displays a lock icon for each database in the <i>database 
+              list view</i>. If the database is locked (requires a password to 
+              access) then the lock icon is &quot;closed&quot; or &quot;locked.&quot; 
+              Otherwise, the lock icon is &quot;open&quot;.<i> <font color="#660000">Keep 
+              in mind, that a locked database only hides the data from view on 
+              the Palm OS device. The database is not encrypted and the data can 
+              be accessed with any MobileDB tool, converter, or even a generic 
+              ASCII text viewer (like Memo Pad). You should not store any highly 
+              sensitive information in a locked MobileDB database. For more information 
+              see <a href="#MobileDBLock">Locking MobileDB Databases.</a></font></i></font></p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif">You can also 
+              select the MobileDB Lite Application Preferences by tapping the 
+              menu button and selecting 'MobileDB Lite Preferences.'&nbsp; For 
+              more information on the application preferences, see <a href="#ApplicationPrefs">MobileDB 
+              Lite Application Preferences</a>. <br>
+              &nbsp; </font> 
+            <h3> <font size="2" face="Arial, Helvetica, sans-serif"><a name="RecordList"></a><font size="3">Record 
+              List View</font></font></h3>
+            <p><font size="2" face="Arial, Helvetica, sans-serif"><b>Scrolling 
+              Up or Down Records </b>- The <i>record list view</i> allows you 
+              to display up to 10 records in the database at any one time.&nbsp; 
+              Use the scroll bar to navigate up and down the records in the database. 
+              Note: the record number indicator at the bottom of the screen (example: 
+              735 of 890) displays the record number <font color="#660000"><i>at 
+              the top of the screen. </i></font>Since the application will not 
+              scroll past the last record location at the bottom of the screen,<font color="#660000"><i> 
+              </i></font>you will never see &quot;890 of 890&quot;. You can scroll 
+              up or down a single record by tapping the up and down arrows at 
+              the top or bottom of the scroll bar. To page up or down either tap 
+              the scroll bar above or below the indicator or use the hard up or 
+              down keys on your Palm OS device.</font></p>
+            <p><b><font face="Arial, Helvetica, sans-serif" size="2">Scrolling 
+              Left or Right </font></b><font face="Arial, Helvetica, sans-serif" size="2">- 
+              If there are more than two fields in each record of your database 
+              then you can use the left or right arrows at the bottom-right of 
+              the screen to scroll through the &quot;fields&quot; or &quot;columns&quot; 
+              of the database. The first field of the record remains static and 
+              will not move while the other fields scroll left and right. It is 
+              extremely important to create an optimal <i>field width </i>setting 
+              in order to keep the field widths small enough so the left and right 
+              scroll works correctly. See <a href="#MenuColumnWidth">Modifying 
+              Field Width</a> for more information.</font></p>
+            <p><font face="Arial, Helvetica, sans-serif" size="2">Also, keep in 
+              mind that if the Use Hard Keys for Scrolling preference is set in 
+              the MobileDB Lite <a href="#ApplicationPrefs">application preferences</a>, 
+              you can use the Address Book and To Do hard keys on your Palm OS 
+              device to scroll the fields left and right in the second column.&nbsp; 
+              This allows for single handed navigation of the entire database. 
+              </font></p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif"><b>Selecting 
+              a Record </b>- To select a record, simply tap the record and the 
+              record is highlighted, then navigate to the screen displaying the 
+              details of the record. MobileDB Lite displays the record details 
+              in read-only format. </font>
+            <p><font face="Arial, Helvetica, sans-serif" size="2"><b>Modifying 
+              the Column Widths - </b>To modify the widths of each column, drag 
+              the column width bar (line between each column name) to the new 
+              location.</font> 
+            <p><font size="2" face="Arial, Helvetica, sans-serif"><b>Exit </b> 
+              - To return to the <i>database list view</i>, tap Done. </font> 
+            <p><b><font size="2" face="Arial, Helvetica, sans-serif">Menu Functions<br>
+              </font></b><font size="2" face="Arial, Helvetica, sans-serif"> </font> 
+            <p><font face="Arial, Helvetica, sans-serif" size="2">Database<br>
+              - Delete Database - Delete the currently selected database (<a href="#delete">more 
+              info)</a><br>
+              - Beam Database - Beam the currently selected database to another 
+              Palm (<a href="#beam">more info</a>)<br>
+              - Change Password - Modify the password of your database (<a href="#MobileDBLock">more 
+              info</a>)<br>
+              - Database Info - Modify the database category and info text<br>
+              - Database Options - Modify the database preferences (<a href="#DatabasePreferences">more 
+              info</a>) </font> 
+            <p><font face="Arial, Helvetica, sans-serif" size="2">Record<br>
+              - Sort Records - Sort the records based on a specified criteria 
+              (<a href="#SortRecords">more info</a>)<br>
+              - Filter Records - Filter the records to only see ones that match 
+              a specified criteria (<a href="#FilterRecords">more info</a>)<br>
+              - Show All Records - Remove the filter from the database, thus displaying 
+              all the records<br>
+              - Find Record - Find a specific record that meets a specified criteria 
+              (<a href="#FindRecord">more info</a>)<br>
+              - Repeat Find - Use the predefined &quot;find&quot; criteria and 
+              find the next record that matched that criteria<br>
+              - Top of Database</font><font face="Arial, Helvetica, sans-serif" size="2"> 
+              - Move to the top record of the database in the record view<br>
+              - Bottom of Database - Move to the last record of the database in 
+              the record view</font> 
+            <p><font face="Arial, Helvetica, sans-serif" size="2">Options<br>
+              - MobileDB Lite Preferences - Modify the MobileDB application preferences 
+              (<a href="#ApplicationPrefs">more info</a>)</font> <br>
+              <font face="Arial, Helvetica, sans-serif" size="2"> - About MobileDB 
+              - Find out more about MobileDB and Handmark<br>
+              <br>
+              <br>
+              </font> 
+            <h3> <font size="2" face="Arial, Helvetica, sans-serif"><a name="RecordEdit"></a><font size="3">Record 
+              Details View</font></font></h3>
+            <p><font size="2" face="Arial, Helvetica, sans-serif">When selecting 
+              a record, MobileDB Lite displays the details of the record in read-only 
+              format. To edit the record on your Palm OS device you will need 
+              to utilize <a href="http://www.handmark.com/products/mobiledb">MobileDB</a>.</font></p>
+            <p><font face="Arial, Helvetica, sans-serif" size="2"><b>Record View 
+              - </b>The <i>record view</i> screen allows the user to view the 
+              detailed information of the record selected from the record list.&nbsp; 
+              </font><font size="2" face="Arial, Helvetica, sans-serif">If the 
+              record details do not fit on a single screen then the user can use 
+              the up/down arrows at the bottom of the screen or the hard up/down 
+              buttons on the palm to navigate up or down the record details. Once 
+              the end of the record is reached, the use of those same buttons 
+              will &quot;jump&quot; to the top of the next record (up or down) 
+              in the record list.<br>
+              <br>
+              In order to edit the record, simply tap somewhere on the record 
+              details or tap the &quot;Edit&quot; button. This will show the same 
+              information in an editable format. </font><font face="Arial, Helvetica, sans-serif" size="2">To 
+              return to the record list press the &quot;Done&quot; button.</font></p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif">&nbsp; </font> 
+            </p>
+            <h3> <font size="2" face="Arial, Helvetica, sans-serif"><a name="ApplicationPrefs"></a><font size="3">MobileDB 
+              Lite Application Preferences</font></font></h3>
+            <font size="2" face="Arial, Helvetica, sans-serif">You can easily 
+            access application preferences from either the <i>database list view 
+            </i>or the <i>record list view</i>. Simply tap MobileDB Preferences 
+            on the Options menu in either the <i>database list view </i>or the 
+            <i>record list view</i>.&nbsp; These preferences are for the entire 
+            application and are not dependent on the database selected. </font> 
+            <p><font size="2" face="Arial, Helvetica, sans-serif"><b>Use Hard 
+              Keys For Scrolling</b> - if checked, the Address Book and To Do 
+              hard keys on your Palm OS device will act as left and right scroll 
+              navigation buttons in the <i>database list view</i>.&nbsp; This 
+              allows for single-handed navigation of the entire database. The 
+              up and down buttons always work in the record list and record view 
+              and edit screens, regardless of this setting. </font> 
+            <p><font size="2" face="Arial, Helvetica, sans-serif"><b>Confirm Record 
+              Delete </b>- if checked, this will cause the application to pop 
+              up the 'Are You Sure' dialog after the user requests to delete a 
+              record.&nbsp; This may be unchecked if the user needs to quickly 
+              delete a lot of records in the database, however, we strongly suggest 
+              that the user keep this option checked during normal operation.</font> 
+            <p> <font size="2" face="Arial, Helvetica, sans-serif"><b>Confirm 
+              Database Delete </b>- if checked, you will be prompted to confirm 
+              a database removal before it is permanently deleted.&nbsp; This 
+              can be unchecked if you need to quickly delete several databases, 
+              however, we strongly suggest you keep this option checked during 
+              normal operation.</font> 
+            <p><b><font face="Arial, Helvetica, sans-serif" size="2">Show Lock 
+              Icons</font></b><font face="Arial, Helvetica, sans-serif" size="2"> 
+              - If checked, lock icons are displayed on the database list indicating 
+              whether or not each database is locked. If you do not use database 
+              locking, then we suggest that this remain unchecked for a &quot;clean&quot; 
+              database list interface.</font> 
+            <p><b><font face="Arial, Helvetica, sans-serif" size="2">Left Hand 
+              Mode </font></b><font face="Arial, Helvetica, sans-serif" size="2"> 
+              - If checked, the scroll bar will be moved to the left side of the 
+              screen. </font> 
+            <p> <br>
+            <h3> <font size="2" face="Arial, Helvetica, sans-serif"><a name="DatabasePreferences"></a><font size="3">Database 
+              Options</font></font></h3>
+            <font size="2" face="Arial, Helvetica, sans-serif">You can easily 
+            access the database preferences in the <i>record list view</i>. Simply 
+            tap Database Preferences on the Database menu. Note that these preferences 
+            only effect the currently selected database, so you will need to set 
+            individual preferences for each database. &nbsp; </font> 
+            <p><font size="2" face="Arial, Helvetica, sans-serif"><b>Backup Database 
+              at Hotsync</b> - if this is checked then a backup is automatically 
+              created during the Hot Sync application, placing it in the backup 
+              directory of your Palm user directory on your PC or Mac. On the 
+              PC, it is generally the c:\palm\&lt;username&gt;\backup</font><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;directory. 
+              You can then use this backup to convert to a comma separated file 
+              for further editing on the PC or Mac. </font> 
+            <p><font size="2" face="Arial, Helvetica, sans-serif"><font color="#660000">NOTE: 
+              Unless there is some reason why you do not want the database backed 
+              up to your machine, this should always be selected. It does not 
+              create a new backup each time you use the Hot Sync application, 
+              only if changes have been made to the database since the last backup 
+              was created. </font></font> 
+            <p><font size="2" face="Arial, Helvetica, sans-serif"><b>Search on 
+              Global Find</b> - If this is checked then the database is searched 
+              when the you perform a Palm OS &quot;Find&quot;. Large databases 
+              may slow the Palm OS find feature, so we suggest that this only 
+              be checked on databases that you would like to search when performing 
+              a PalmOS find.</font> 
+            <p><font size="2" face="Arial, Helvetica, sans-serif"><b>Display Dates 
+              in Long Format</b> - If this is checked then the dates in utilizing 
+              the date field types will be displayed as MMM DD, YYYY instead of 
+              the default view MM/DD/YY</font><br>
+              <br>
+              <br>
+            <p><font size="2" face="Arial, Helvetica, sans-serif"><a name="SortRecords"></a><font size="3"><b>Sorting 
+              Records<br>
+              </b></font></font><font size="2" face="Arial, Helvetica, sans-serif">You 
+              can sort records in the <i>record list view</i>. Simply tap Sort 
+              Records on the Record menu and the Sort Records screen appears.&nbsp; 
+              &nbsp; Select the primary, secondary, and tertiary sort criteria 
+              by selecting the field to sort.&nbsp; Select the Ascending or Descending 
+              selection buttons if you would like that field to be sorted in ascending 
+              or descending order. Once the sort criteria has been set, tap OK 
+              to begin the sort..&nbsp; This may take a few seconds depending 
+              on the number of records and complexity of the sort.&nbsp; Tap Cancel 
+              to cancel the sort. <font color="#000000">The sort is based on the 
+              field types selected. Therefore, if you want to sort chronologically 
+              then the field you are sorting on must be a date field type.</font><font color="#660000"><br>
+              <br>
+              <br>
+              </font></font></p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif"></font> <font size="2" face="Arial, Helvetica, sans-serif"><a name="FilterRecords"> 
+              </a><b><font size="3">Filter Records<br>
+              </font></b><font size="3"> </font>Filtering the records allows you 
+              to view only the records that contain specific text.&nbsp; To filter 
+              records, tap Filter Records on the Record menu in the <i>record 
+              list view</i>.&nbsp; The filter options are based on the field data 
+              type you have selected. For text fields you can choose to filter 
+              text equal to (is) or continaing (contains) the text you enter. 
+              For number field types you can filter a record that 'is', 'is not', 
+              'is greater than', or 'is less than' the number entered. Checkbox 
+              is filtered as 'is' or 'is not' checked or unchecked and a list 
+              is filtered as 'is' or 'is not' one of the list items. The date 
+              and time fields are filtered based on 'is', 'is not', 'is before' 
+              or 'is after' the selected date or time.</font></p>
+            <p><font face="Arial, Helvetica, sans-serif" size="2">You can also 
+              choose to combine multiple filters as an 'and' requiring a match 
+              on all the filters or 'or' which just requires a match on one filter. 
+              If you already a filter on the current database then you'll have 
+              the option to apply the filter over the current filter (filtered 
+              rec's) or all the records in the database.</font></p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif">Once you have 
+              entered your filter criteria, tap OK to start the filter, and Cancel 
+              to cancel the filter. </font> <font size="2" face="Arial, Helvetica, sans-serif"><br>
+              <br>
+              When the filter has been completed in the <i>record list view</i>, 
+              a small reverse 'F' appears at the top-right of the <i>record list 
+              view</i>.&nbsp; To remove the the filter, simply tap the 'F' and 
+              the filter is removed, displaying all records.&nbsp; You can also 
+              tap Show all Records on the Record menu to remove the filter off 
+              and display all records. <br>
+              <br>
+              <br>
+              </font> </p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif"><a name="FindRecord"></a><font size="3"><b>Find 
+              Records<br>
+              </b></font></font><font size="2" face="Arial, Helvetica, sans-serif">To 
+              find a record that contains a specific string of text, use the Find 
+              Record feature.&nbsp; Tap Find Record on the Record menu.&nbsp; 
+              The <i>record list view</i> appears, then you can enter the find 
+              text and select the field on which to search for the text.&nbsp; 
+              Press OK and the Record List appears with the record highlighted 
+              with the the text.&nbsp; To repeat the find, tap the small reverse 
+              'R' at the top-right of the screen.&nbsp; The application will continue 
+              to search for the text until it reaches the end of the database 
+              and it will prompt you to start from the beginning of the database.<br>
+              </font></p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif"> <br>
+              </font> <font size="2" face="Arial, Helvetica, sans-serif"><a name="MenuColumnWidth"></a><b><font size="3">Modify 
+              Column Widths</font></b><br>
+              </font><font face="Arial, Helvetica, sans-serif" size="2">To modify 
+              the widths of each column, drag the column width bar (line between 
+              each column name) to the new location.</font> </p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif"><br>
+              </font><font size="2" face="Arial, Helvetica, sans-serif"><a name="MobileDBLock"></a><b><font size="3">MobileDB 
+              Database Locking<br>
+              </font></b><font size="2" face="Arial, Helvetica, sans-serif">To 
+              lock a MobileDB database, select the database and then tap Change 
+              Password on the Database menu. Leave the &quot;Old Password&quot; 
+              field blank (since there is no password set) and enter your password 
+              in the &quot;New Password&quot; and &quot;Retype New&quot; fields. 
+              The next time a that database is selected, you will be prompted 
+              to enter a password before viewing or editing the database.</font></font></p>
+            <p><font face="Arial, Helvetica, sans-serif" size="2" color="#660000"><b>NOTE: 
+              This &quot;lock&quot; simply hides the database from view in the 
+              MobileDB application. If someone is interested enough in this information, 
+              they can simply hotsync your palm and view the database on the PC 
+              using an ASCII viewer or any MobileDB converter. DO NOT PLACE ANY 
+              SENSITIVE INFORMATION IN THIS APPLICATION WITH THE ASSUMPTION THAT 
+              &quot;LOCKING&quot; IT WILL SECURE THE INFORMATION. You should use 
+              an encrypted database application (like our Mobile Account Manager) 
+              in order to secure sensitive information.</b></font></p>
+            <p><br>
+              <font size="2" face="Arial, Helvetica, sans-serif"><a name="MobileDBLock"></a><b><font size="3">Database 
+              Information<br>
+              </font></b><font size="2" face="Arial, Helvetica, sans-serif">The 
+              database information screen is intented to display information about 
+              the database as well as allow users to set the database category. 
+              Enter the information about the database if you plan on sharing 
+              it with other users. If you want to keep users from editing the 
+              database information then press the &quot;&quot;Lock Text&quot; 
+              button, enter the password, and press ok. Users will be able to 
+              view the database information but they will be required to enter 
+              that password before they can edit the database info text.</font></font></p>
+            <p>&nbsp; </p>
+            <h2> <font size="2" face="Arial, Helvetica, sans-serif"><a name="VersionInfo"></a><font size="4">Version 
+              Information</font></font></h2>
+            <p><font size="2" face="Arial, Helvetica, sans-serif"><b>Version 3.0</b></font><br>
+              <font size="2" face="Arial, Helvetica, sans-serif">- Drag and drop 
+              column widths<br>
+              - Filter and sort based on the field types<br>
+              - Compatible with <a href="../mobiledbpc/index.html">MobileDB-PC,</a> 
+              <a href="../mobiledbexcel/index.html">MobileDB-Excel</a> and <a href="../mobiledbfm/index.html">MobileDB-FileMaker</a><br>
+              - Added a 10 database limitation<br>
+              </font></p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif"><b>Version 2.1</b></font><br>
+              <font size="2" face="Arial, Helvetica, sans-serif">First release 
+              of MobileDB Lite from Handmark, Inc.<br>
+              <br>
+              </font><font size="2" face="Arial, Helvetica, sans-serif"><b>Version 
+              2.01 - 2.06</b></font><br>
+              <font size="2" face="Arial, Helvetica, sans-serif">Fixed minor bugs 
+              seen in Palm OS v2.0<br>
+              Fixed bugs with the scroll bar in very large databases</font><br>
+              <font size="2" face="Arial, Helvetica, sans-serif">Locked out PalmPilot 
+              Personal users as they cannot handle the memory requirements of 
+              MobileDB.</font><br>
+            </p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif"><b>Version 2.0<br>
+              </b>Increased the max number of databases from 20 to 60<br>
+              Increased the max characters per field to 1000<br>
+              Added the ability to lockand beam a database<br>
+              Added the ability to view database size by # records or KBytes<br>
+              Added the ability to scroll through the records from the record 
+              details views </font><font size="2" face="Arial, Helvetica, sans-serif"><br>
+              Added font selected in the record details view<br>
+              </font><font size="2" face="Arial, Helvetica, sans-serif">Added 
+              some great UI enhancements including scroll bars, actions on <i>database 
+              list view</i>, etc<b><br>
+              </b></font></p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif"><b>Version 1.3</b><br>
+              Increased the speed of the find, filter, and sort by 70%-90%<br>
+              </font><font size="2" face="Arial, Helvetica, sans-serif"><br>
+              </font><font size="2" face="Arial, Helvetica, sans-serif"><b>Version 
+              1.11</b><br>
+              </font><font size="2" face="Arial, Helvetica, sans-serif">Fixed 
+              the 1000 record bug which caused a fatal error with database over 
+              1000 records. <br>
+              Fixed the 20th field bug which caused a fatal exception on databases 
+              with 20 fields <br>
+              Fixed the expanded field scroll/backspace bug which caused a fatal 
+              exception when scrolling then using a backspace. </font> </p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif"> <b>Version 
+              1.1</b><br>
+              </font><font size="2" face="Arial, Helvetica, sans-serif">These 
+              are the first public releases of the MobileDB and MobileDB Lite 
+              registered/unregistered versions.&nbsp; The software will work as 
+              an unregistered, 2 database limited, trial version until the user 
+              registers the software and enters the registration code based on 
+              the PalmOS user name of the device. </font> </p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif"><b>Version 1.0</b><br>
+              </font><font size="2" face="Arial, Helvetica, sans-serif">First 
+              public release. This release is a full version of MobileDB, set 
+              to expire July 1, 1998.&nbsp; At this time, the 2 database trial 
+              versions of MobileDB and MobileDB Lite will be available.&nbsp; 
+              Users will also be able to register full versions of MobileDB and 
+              MobileDB Lite. </font></p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif"><br>
+              </font> </p>
+            <font size="2" face="Arial, Helvetica, sans-serif"><a name="purchase"></a><font size="4"><b>Purchasing 
+            MobileDB Lite</b><br>
+            </font>MobileDB Lite is freeware and requires no payment or registration 
+            for personal use. Please visit the <a href="http://www.handmark.com">Handmark 
+            web site</a> for a list of all our great <a href="http://www.handmark.com/products">Palm 
+            OS products</a>. </font> 
+            <p><font face="Arial, Helvetica, sans-serif"> <br>
+              </font> 
+            <p><font face="Arial, Helvetica, sans-serif"><a 
+      name="Company"></a><font size="4"><b>Handmark Company Information</b><br>
+              </font></font><font size="2" face="Arial, Helvetica, sans-serif">Handmark 
+              develops consumer software for the exploding handheld computer market. 
+              Handmark was created to meet an untapped opportunity for professionally 
+              packaged and supported Palm OS® software in the retail channel. 
+              The company is led by an experienced management team that has successfully 
+              developed and marketed numerous best-selling consumer PC software 
+              titles worldwide. Handmark software is compatible with the popular 
+              Palm® and Handspring® handheld computers as well as other licensees 
+              of the Palm OS including new devices from Sony®. The desktop component 
+              of Palmspring applications is compatible with both Apple® Macintosh® 
+              and Microsoft® Windows® personal computers. </font><font size="2" face="Arial, Helvetica, sans-serif">Please 
+              see the <a href="http://www.handmark.com">Handmark web site</a> 
+              for more information.</font></p>
+            <p><font face="Arial, Helvetica, sans-serif"><a 
+      name="more_products"></a></font><font face="Arial, Helvetica, sans-serif" size=2><b>Check 
+              out these great Palm OS titles from Handmark</b><b> at the <a href="http://www.handmark.com/products">Handmark 
+              web site</a></b>.<br>
+              <br>
+              <a 
+      href="http://www.handmark.com/products/mobileam">Mobile Account Manager</a> 
+              - Safely and securely store all your passwords, pin numbers, login 
+              ID's, checking accounts, credit card numbers with the original security 
+              application.</font> </p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif"><a href="http://www.handmark.com/products/mobiledb">MobileDB</a> 
+              - View and edit any small database, table, or spreadsheet data on 
+              your Palm. MobileDB also includes a free PC version of the software 
+              to create and access MobileDB databases on your PC.</font> 
+            <p><font face="Arial, Helvetica, sans-serif" size=2><a 
+      href="http://www.handmark.com/products/studentassistant">Student Assistant</a> 
+              - Give this great Student Assistant CD as a gift to any Palm-using 
+              student. This CD contains the full version of Four.Zero</font></p>
+            <p>&nbsp;</p>
+            <p><font face="Arial, Helvetica, sans-serif"><a 
+      name=License></a><font size="2"><b><font size="4">So</font></b></font><font size="4"><b>ftware 
+              License Agreement </b></font></font> 
+            <p><font size="2" face="Arial, Helvetica, sans-serif">PLEASE READ 
+              THIS LICENSE CAREFULLY BEFORE USING HANDMARK SOFTWARE. BY USING 
+              THE HANDMARK SOFTWARE, YOU AGREE TO BECOME BOUND BY THE TERMS OF 
+              THIS LICENSE IF YOU DO NOT AGREE TO THE TERMS OF THIS LICENSE, DO 
+              NOT USE THE HANDMARK SOFTWARE. </font></p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif">The Handmark 
+              software ("Software") provided along with this License, is licensed, 
+              not sold, to you by Handmark Software Incorporated ("Handmark") 
+              for use only under the terms of this License, and Handmark reserves 
+              any rights not expressly granted to you. You own the media on which 
+              the Software is recorded, but Handmark and its licensors retain 
+              ownership of the Software itself. </font></p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif">1. License. 
+              This License allows you to: </font></p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif">(a) Use one 
+              copy of the Software on a single computer at a time To "use" the 
+              Software means that the Software is either loaded in the temporary 
+              memory of a computer or installed on the permanent memory of a computer. 
+              You may install the Software on a common storage device which is 
+              accessible by multiple computers, provided that if more computers 
+              have access to the common storage device than the number of licensed 
+              copies of the Software, you must have some software mechanism which 
+              locks-out any concurrent users in excess of the number of licensed 
+              copies of the Software and additional license is not needed for 
+              the one copy of Software installed on the common storage device 
+              accessed by multiple computers) <br>
+              (b) Make one copy of the Software in machine readable form solely 
+              for backup purposes. Additionally, only so long as the Software 
+              is installed only on the permanent memory of a single desktop computer 
+              which is not accessible by multiple computers and that single desktop 
+              computer is used by one user for at least 80% of the time the computer 
+              is in use, that same user may also make a copy of the Software to 
+              use on a portable or home computer which is primarily used by such 
+              user As an express condition of this License, you must reproduce 
+              on each copy any copyright notice or other proprietary notice that 
+              is on the original copy supplied by Handmark <br>
+              (c) Permanently transfer all your rights under this License to another 
+              party by providing to such party all copies of the Software licensed 
+              under this License together with a copy of this License and the 
+              accompanying written materials, provided that the other party reads 
+              and agrees to accept the terms and conditions of this License </font></p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif">2. Restrictions. 
+              The Software contains trade secrets in its human perceivable form 
+              and, to protect them, you may not REVERSE ENGINEER, DECOMPILE, DISASSEMBLE 
+              OR OTHERWISE REDUCE THE SOFTWARE TO ANY HUMAN PERCEIVABLE FORM YOU 
+              MAY NOT MODIFY, ADAPT, TRANSLATE, RENT, LEASE, LOAN OR CREATE DERIVATIVE 
+              WORKS BASED UPON THE SOFTWARE OR ANY PART THEREOF </font></p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif">3. Termination. 
+              This License is effective until terminated This License will terminate 
+              immediately without notice from Handmark or judicial resolution 
+              if you fail to comply with any provision of this License Upon such 
+              termination you must destroy the Software, all accompanying written 
+              materials and all copies thereof, and Sections 5, 6 and 7 will survive 
+              any termination </font></p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif">4. Limited Warranty. 
+              Handmark warrants for a period of ninety (90) days from your date 
+              of purchase that the Software as provided by Handmark will substantially 
+              conform to Handmark's published specifications for the Software 
+              Handmark's entire liability and your sole and exclusive remedy for 
+              any breach of the foregoing limited warranty will be, at Handmark's 
+              option, replacement of the media (if any), refund of the purchase 
+              price (based on fair market value of the Software) or repair or 
+              replacement of the Software. THIS LIMITED WARRANTY IS THE ONLY WARRANTY 
+              PROVIDED BY HANDMARK AND HANDMARK AND ITS LICENSORS EXPRESSLY DISCLAIM 
+              ALL OTHER WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT 
+              LIMITED TO IMPLIED WARRANTIES OF MERCHANT ABILITY AND FITNESS FOR 
+              A PARTICULAR PURPOSE WITH REGARD TO THE SOFTWARE AND ACCOMPANYING 
+              WRITTEN MATERIALS. BECAUSE SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION 
+              OR LIMITATION OF IMPLIED WARRANTIES, THE ABOVE LIMITATION MAY NOT 
+              APPLY TO YOU. </font></p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif">5. Limitation 
+              of Remedies and Damages. IN NO EVENT WILL HANDMARK OR ANY OF THE 
+              LICENSORS, DIRECTORS, OFFICERS, EMPLOYEES OR AFFILIATES OF ANY OF 
+              THE FOREGOING BE LIABLE TO YOU FOR ANY CONSEQUENTIAL, INCIDENTAL, 
+              INDIRECT OR SPECIAL DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, 
+              DAMAGES FOR LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS 
+              OF BUSINESS INFORMATION AND THE LIKE), WHETHER FORESEEABLE OR UNFORESEEABLE, 
+              ARISING OUT OF THE USE OF OR INABILITY TO USE THE SOFTWARE OR ACCOMPANYING 
+              WRITTEN MATERIALS, REGARDLESS OF THE BASIS OF THE CLAIM AND EVEN 
+              IF HANDMARK OR A HANDMARK REPRESENTATIVE HAS BEEN ADVISED OF THE 
+              POSSIBILITY OF SUCH DAMAGE. Handmark's liability to you for direct 
+              damages for any cause whatsoever, and regardless of the form of 
+              the action, will be limited to the greater of $500 or the money 
+              paid for the Software (based on fair market value of the Software) 
+              that caused the damages. THIS LIMITATION WILL NOT APPLY IN CASE 
+              OF PERSONAL INJURY ONLY WHERE AND TO THE EXTENT THAT APPLICABLE 
+              LAW REQUIRES SUCH LIABILITY BECAUSE SOME JURISDICTIONS DO NOT ALLOW 
+              THE EXCLUSION OR LIMITATION OF LIABILITY FOR CON-SEQUENTIAL OR INCIDENTAL 
+              DAMAGES, THE ABOVE LIMITATION MAY NOT APPLY TO YOU. </font></p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif">6. General. 
+              This License will be construed under the laws of the State of Missouri, 
+              except for that body of law dealing with conflicts of law If any 
+              provision of this License shall be held by a court of competent 
+              jurisdiction to be contrary to law, that provision will be enforced 
+              to the maximum extent permissible, and the remaining provisions 
+              of this License will remain n full force and effect If you are a 
+              U S Government user then the Software is provided with "RESTRICTED 
+              RIGHTS" as set forth in subparagraphs (c) (l) and( 2) of the Commercial 
+              Computer Software Restricted Rights clause at FAR52227-19 o sub 
+              paragraph (c) (1) (ii) of the Rights in Technical Data and Computer 
+              Software clause at DFARS 52 277-7013, as applicable Manufacturer 
+              Handmark, Incorporated 105 East 5th Street, Suite 201, Kansas City, 
+              MO 64106. </font></p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif"> </font></p>
+            <p><font size="2" face="Arial, Helvetica, sans-serif"><b>Distribution 
+              <br>
+              </b>You are hereby licensed to make as many copies of the this software 
+              and documentation as you wish; give exact copies of the original 
+              evaluation version to anyone; and distribute the evaluation version 
+              of the software and documentation in its unmodified form via electronic 
+              means. There is no charge for any of the above. You are specifically 
+              prohibited from charging, or requesting donations, for any such 
+              copies, however made; and from distributing the software and/or 
+              documentation with other products (commercial or otherwise) without 
+              prior written permission. </font></p>
+            <p><font face="Arial, Helvetica, sans-serif" size=2>Send comments 
+              and requests about this information to <a 
+      href="mailto:info@handmark.com">info@handmark.com</a> or visit the Handmarkweb 
+              site at: <a 
+      href="http://www.handmark.com/">http://www.handmark.com/</a> </font><font face="Arial, Helvetica, sans-serif"></font></p>
+            </td>
+          <td width="20" bgcolor="#F0F0F0" height="6477"> 
+            <p><font size="2" face="Arial, Helvetica, sans-serif"><br>
+              </font> 
+            <table width="20" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><font size="1"><font size="1"><font face="Verdana, Arial, Helvetica, sans-serif"><font face="Verdana, Arial, Helvetica, sans-serif"></font></font></font></font></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+              <tr> 
+                <td height="300"> 
+                  <div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><a href="#top">top</a></font></div>
+                </td>
+              </tr>
+            </table>
+            <p><font size="2" face="Arial, Helvetica, sans-serif"> </font> 
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<div align="center"></div>
+<div align="center"></div>
+</BODY>
+</HTML>

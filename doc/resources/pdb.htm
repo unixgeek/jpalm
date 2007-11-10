@@ -1,0 +1,291 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0034)http://www.roadcoders.com/pdb.html -->
+<HTML><HEAD><TITLE>The Pilot Record Database Format</TITLE>
+<META content="text/html; charset=windows-1252" http-equiv=Content-Type>
+<META content="MSHTML 5.00.2014.210" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD width=600>
+      <P align=center><B><FONT face=Arial,Helvetica size=4>The Pilot Record 
+      Database Format</FONT></B> 
+      <P>This document is based on information derived from experiences with 
+      PalmOS 1.0.6, PalmOS 2.0, CoPilot,&nbsp;POSE, 
+      the&nbsp;Macintosh&nbsp;simulator and other utilities that read or create 
+      PDB files. Future versions of software may behave differently from what is 
+      describe below. 
+      <P>
+      <P><B><I><FONT face=Arial,Helvetica>The PDB File Format 
+      Basics</FONT></I></B><BR>The Pilot Database (PDB) File format can be used 
+      to transfer files to the PalmPilot. It is possible to install PDB files to 
+      create either resource or record databases through this mechanism. This 
+      document only reviews the record database capabilities of the PDB File 
+      Format. 
+      <P>The PDB file format is also used to store databases from the PalmPilot 
+      on the Macintosh/PC. Pilot databases contain an attribute bit called the 
+      Backup Bit. Setting this bit indicates that no custom conduit will be 
+      backing up the database and that the database should be backed up during 
+      the HotSync process. If you create a database on the PalmPilot and set the 
+      Backup Bit, you will find a copy of the database in PDB format in the 
+      Backup directory on the computer with which the HotSync was performed. 
+      <P>There is a direct correlation between what is described here, and the 
+      PalmPilot record database format as described in Developing PalmOS 3.0 
+      Applications. See Part III, Chapter 1 for further details. Specifically, 
+      pages 37 to 41 of that document &nbsp;(pages 34 to 38 of the version for 
+      PalmOS 2.0) will give you an overview of the PalmPilot database structure 
+      and help you understand the meaning of some of the record attributes and 
+      database header fields. 
+      <P>No mnemonics are provided for named constants in this document. If you 
+      are using "C" you may wish to review the header file DataMgr.h for public 
+      constants for bit flags. Constants are shown using the "C" language 
+      convention for hexadecimal numbers (e.g., 0x0A), followed by decimal 
+      values where they are not obvious. 
+      <P>
+      <P><B><I><FONT face=Arial,Helvetica>Major Sections of the PDB 
+      File</FONT></I></B><BR>The PDB file (from this point forward that term 
+      refers to the record database format exclusively) is made up of the 
+      following sections: Header, Record List and Data. They are each described 
+      in the following paragraphs. 
+      <P>The Header supplies the basics of the file format: file name (on the 
+      PalmPilot), various time stamps, version numbers, file attributes, creator 
+      and type information, etc. 
+      <P>The Record List enumerates all the records of the file, their 
+      attributes and locations within the PDB file. 
+      <P>The Data portion of the PDB file contains the actual AppInfoArea, 
+      SortInfoArea and data records. The AppInfoArea and the SortInfoArea are 
+      application-specific areas that are optional elements of the PDB file. A 
+      PDB file may contain neither, one or both of these areas. The PDB file 
+      need not contain any records for HotSync to install the file, however the 
+      unsupported&nbsp;FTP code that comes the Metrowerks development tools does 
+      not support the installation of files with zero records. 
+      Current&nbsp;Palm-supported tools that read PDB files include the Palm 
+      Install&nbsp;Tool (to&nbsp;install via&nbsp;&nbsp;HotSync), the 
+      Macintosh-only Simulator (via interactive console commands), and the 
+      PalmOS Emulator (POSE). 
+      <P>
+      <P><B><I><FONT face=Arial,Helvetica>The Header</FONT></I></B><BR>The 
+      header is made up of the following fields. 
+      <TABLE border=1 cellPadding=6 cellSpacing=0>
+        <TBODY>
+        <TR bgColor=#000000 vAlign=top>
+          <TD width=120><B><FONT color=#ffffff 
+            face=Arial,Helvetica>Field</FONT></B></TD>
+          <TD><B><FONT color=#ffffff face=Arial,Helvetica 
+            ALIGN="CENTER">Bytes</FONT></B></TD>
+          <TD><B><FONT color=#ffffff face=Arial,Helvetica>Type</FONT></B></TD>
+          <TD><B><FONT color=#ffffff 
+        face=Arial,Helvetica>Notes</FONT></B></TD></TR>
+        <TR vAlign=top>
+          <TD>Name</TD>
+          <TD align=right>32</TD>
+          <TD>Null-terminated string</TD>
+          <TD>This is the name of the database on the PalmPilot device. It 
+            need not match the name of the PDB file in the environment in which 
+            it is created.</TD></TR>
+        <TR vAlign=top>
+          <TD>File Attributes</TD>
+          <TD align=right>2</TD>
+          <TD>Numeric*</TD>
+          <TD>0x0002 Read-Only 
+            <P>0x0004 Dirty AppInfoArea 
+            <P>0x0008 Backup this database (i.e. no conduit exists) 
+            <P>0x0010 (16 decimal) Okay to install newer over existing copy, if 
+            present on PalmPilot 
+            <P>0x0020 (32 decimal) Force the PalmPilot to reset after this 
+            database is installed 
+            <P>0x0040 (64&nbsp;decimal) Don't allow copy of file to be beamed to 
+            other Pilot.</P></TD></TR>
+        <TR vAlign=top>
+          <TD>Version</TD>
+          <TD align=right>2</TD>
+          <TD>Numeric*</TD>
+          <TD>Defined by the application.</TD></TR>
+        <TR vAlign=top>
+          <TD>Creation Date</TD>
+          <TD align=right>4</TD>
+          <TD>Numeric*</TD>
+          <TD>Expressed as the number of seconds since January&nbsp;1, 1904. 
+            <B>The database will not install if this value is zero.</B> (PalmOS 
+            1.0.6)</TD></TR>
+        <TR vAlign=top>
+          <TD>Modification Date</TD>
+          <TD align=right>4</TD>
+          <TD>Numeric*</TD>
+          <TD>Expressed as the number of seconds since January&nbsp;1, 1904. 
+            <B>The database will not install if this value is zero.</B> (PalmOS 
+            1.0.6)</TD></TR>
+        <TR vAlign=top>
+          <TD>Last Backup Date</TD>
+          <TD align=right>4</TD>
+          <TD>Numeric*</TD>
+          <TD>Expressed as the number of seconds since January&nbsp;1, 1904. 
+            This can be left at zero and the database will install.</TD></TR>
+        <TR vAlign=top>
+          <TD>Modification Number</TD>
+          <TD align=right>4</TD>
+          <TD>Numeric*</TD>
+          <TD>Set to zero.</TD></TR>
+        <TR vAlign=top>
+          <TD>AppInfoArea</TD>
+          <TD align=right>4</TD>
+          <TD>Numeric*</TD>
+          <TD>The byte number in the PDB file (counting from zero) at which 
+            the AppInfoArea is located. This must be the first entry in the Data 
+            portion of the PDB file. If this database does not have an 
+            AppInfoArea, set this value to zero. See Note A below.</TD></TR>
+        <TR vAlign=top>
+          <TD>SortInfoArea</TD>
+          <TD align=right>4</TD>
+          <TD>Numeric</TD>
+          <TD>The byte number in the PDB file (counting from zero) at which 
+            the SortInfoArea is located. This must be placed immediately after 
+            the AppInfoArea, if one exists, within the Data portion of the PDB 
+            file. If this database does not have a SortInfoArea, set this value 
+            to zero. <B><I>Do not use this. See Note C below for further 
+            details.</I></B></TD></TR>
+        <TR vAlign=top>
+          <TD>Database Type</TD>
+          <TD align=right>4</TD>
+          <TD>String</TD>
+          <TD>Set this to the desired value. Generally it should match the 
+            Database Type used by the corresponding application This is 4 
+            characters long and does not have a terminating null.</TD></TR>
+        <TR vAlign=top>
+          <TD>Creator ID</TD>
+          <TD align=right>4</TD>
+          <TD>String</TD>
+          <TD>Set this to the desired value. Generally it should match the 
+            Creator ID used by the corresponding application. In all cases, you 
+            should always register your Creator ID before using it. This is 4 
+            characters long and does not have a terminating null.</TD></TR>
+        <TR vAlign=top>
+          <TD>Unique ID Seed</TD>
+          <TD align=right>4</TD>
+          <TD>Numeric*</TD>
+          <TD>This is used to generate the Unique ID number of subsequent 
+            records. This should be set to zero. See Note B below.</TD></TR>
+        <TR vAlign=top>
+          <TD>NextRecordList ID</TD>
+          <TD align=right>4</TD>
+          <TD>Numeric*</TD>
+          <TD>Set this to zero. The element is used only in the in-memory 
+            representation of a PDB file, but exists in the external version for 
+            consistency.</TD></TR>
+        <TR vAlign=top>
+          <TD>Number of Records</TD>
+          <TD align=right>2</TD>
+          <TD>Numeric*</TD>
+          <TD>This contains the number of records</TD></TR></TBODY></TABLE>
+      <P>*Please note that the PalmPilot's processor is a member of the Motorola 
+      68000 family. The processor expect Numeric fields to be arranged with the 
+      Most Significant Byte coming first as you move through the file. If you 
+      are creating your file on a processor family that does not follow this 
+      byte ordering, notably Intel processors, pay attention or you will not 
+      have the expected results. 
+      <P><B><FONT face=Arial,Helvetica>Note A:</FONT></B> Because of differences 
+      between the behavior of software provided on the Macintosh and PC 
+      platforms, and bugs which are present, but different, between those 
+      platforms, the following advice is given. <B>If you are going to have an 
+      AppInfoArea, the safest prospect, between the two platforms is to have an 
+      AppInfoArea of exactly 512 bytes.</B> If you need a larger area, it is 
+      recommended by Palm's Developer Support that you dedicate a record or 
+      resource to that purpose. Macintosh users will experience problems if the 
+      AppInfoArea is longer than 512. For Windows-based users, the AppInfoArea 
+      will be padded with garbage to be exactly 512 bytes, if it is shorter than 
+      that. Windows users should not encounter problems when installing an 
+      AppInfoArea longer than 512 bytes. 
+      <P><B><FONT face=Arial,Helvetica>Note B:</FONT></B> Various statements 
+      have been&nbsp;made about the UniqueID Seed, but they do not appear to be 
+      possible to verify. As of PalmOS 2, UniqueIDs <I>are not preserved 
+      </I>through the process of backing up&nbsp;and re-installing 
+      a&nbsp;database to the Pilot. Changes may come about that will make this 
+      work in the expected way, but for now, if you want to count on a known 
+      value to uniquely identify a record, the developer should assign that 
+      number and store it within the data portion of the record. 
+      The&nbsp;UniqueID Seed should&nbsp;be set to zero. 
+      <P><B><FONT face=Arial,Helvetica>Note C:</FONT></B> Backup and downloading 
+      of the SortInfoArea is not supported by PalmOS. While it is possible to 
+      attach a piece of memory to the SortInfoArea pointer within the PalmPilot, 
+      the PDB loading and PDB backup process that occurs when the Backup Bit is 
+      set to do not support the SortInfoArea. The best solution is to dedicate a 
+      record or resource to the storage of whatever information you might want 
+      to keep in the SortInfoArea and&nbsp;avoid using the SortInfoArea. 
+      <P>
+      <P><B><I><FONT face=Arial,Helvetica>The Record List</FONT></I></B><BR>The 
+      Record List is made up "n" structures, where "n" represents the number of 
+      records in the PDB file. Each structure has the following format. 
+      <TABLE border=1 cellPadding=6 cellSpacing=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD bgColor=#000000 width=120><B><FONT color=#ffffff 
+            face=Arial,Helvetica>Field</FONT></B></TD>
+          <TD align=right bgColor=#000000><B><FONT color=#ffffff 
+            face=Arial,Helvetica>Bytes</FONT></B></TD>
+          <TD bgColor=#000000><B><FONT color=#ffffff 
+            face=Arial,Helvetica>Type</FONT></B></TD>
+          <TD bgColor=#000000><B><FONT color=#ffffff 
+            face=Arial,Helvetica>Notes</FONT></B></TD></TR>
+        <TR vAlign=top>
+          <TD>Record Data Offset</TD>
+          <TD align=right>4</TD>
+          <TD>Numeric*</TD>
+          <TD>The byte number in the PDB file (counting from zero) at which 
+            the record is located.</TD></TR>
+        <TR vAlign=top>
+          <TD>Record Attributes</TD>
+          <TD align=right>1</TD>
+          <TD>Numeric</TD>
+          <TD>0x10 (16 decimal) Secret record bit. 
+            <P>0x20 (32 decimal) Record in use (busy bit). 
+            <P>0x40 (64 decimal) Dirty record bit. 
+            <P>0x80 (128, unsigned decimal) Delete record on next HotSync. 
+            <P>The least significant four bits are used to represent the 
+            category values.</P></TD></TR>
+        <TR vAlign=top>
+          <TD>UniqueID</TD>
+          <TD align=right>3</TD>
+          <TD>Numeric*</TD>
+          <TD>Set this to zero and do not try to second-guess what PalmOS will 
+            do with this value. See Note B above.</TD></TR></TBODY></TABLE>
+      <P>*See note after first table for Numeric field types. 
+      <P>
+      <P><B><I><FONT face=Arial,Helvetica>Assembling the 
+      File</FONT></I></B><BR>To create the PDB file, you must assemble the 
+      components in this order. 
+      <TABLE border=1 cellPadding=6 cellSpacing=0 width=559>
+        <TBODY>
+        <TR vAlign=top>
+          <TD bgColor=#000000 width=120><B><FONT color=#ffffff 
+            face=Arial,Helvetica>Area</FONT></B></TD>
+          <TD bgColor=#000000 width=480><B><FONT color=#ffffff 
+            face=Arial,Helvetica>Description</FONT></B></TD></TR>
+        <TR vAlign=top>
+          <TD>Database Header</TD>
+          <TD>The complete header format, as described above.</TD></TR>
+        <TR vAlign=top>
+          <TD>Record List</TD>
+          <TD>Must contain at least one entry.</TD></TR>
+        <TR vAlign=top>
+          <TD>Filler</TD>
+          <TD>Upon transferring a database from the PalmPilot to the desktop 
+            environment, the PDB file will have two bytes of filler here. It 
+            does not appear to be necessary to insert these two bytes here when 
+            creating a PDB file for installation on the PalmPilot. However, if 
+            you read a PDB file created by the backup conduit (setting the 
+            Backup Bit), you will find that there are two bytes of data in this 
+            location.</TD></TR>
+        <TR vAlign=top>
+          <TD>Data Area</TD>
+          <TD>It must be in this order: AppInfoArea (if present), SortInfoArea 
+            (if present), and records, sequentially. The order is important 
+            because each element's size is computed based on the location of the 
+            following element.</TD></TR></TBODY></TABLE>
+      <P>
+      <P><B><I><FONT 
+      face=Arial,Helvetica>Advice</FONT></I></B><BR>With&nbsp;each release of 
+      desktop or device software from Palm, the behavior of the software changes 
+      slightly. In an attempt to keep this document up-to-date, please advise 
+      the author of any discrepancies or inaccuracies you may observe. Write to 
+      <A href="mailto:bobf@ilx.com">bobf@ilx.com</A> or <A 
+      href="mailto:bobf@jhu.edu">mailto:bobf@jhu.edu</A>.</P></TD></TR></TBODY></TABLE></BODY></HTML>

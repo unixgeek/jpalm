@@ -1,0 +1,113 @@
+MobileDB (TM) Developer Suite
+
+The MobileDB Developer suite includes the following files:
+
+MobileDB.DLL - DLL to import and export data to/from MobileDB databases
+MobileDB_DLL_functions.doc - Instructions on accessing MobileDB.DLL through your application
+MobileDB_Structure.html - Outline of the MobileDB database format. 
+ReadMe.txt - this readme file
+MobileDB Directory - MobileDB for the Palm OS
+MobileDB Lite Directory - mobileDB Lite for the Palm OS
+
+
+There is currently no developer support for the MobileDB Developer Suite.  You may send 
+feedback, suggestions or bugs to mobiledbdeveloper@handmark.com.  Please let us know if 
+you are developing MobileDB tools for public release as we may be able to provide
+marketing support and communicate the new tools to our MobileDB user base.
+
+
+
+Thank you,
+
+Handmark, Inc.
+www.handmark.com
+
+
+License Agreement
+
+
+Software License Agreement
+PLEASE READ THIS LICENSE CAREFULLY BEFORE USING HANDMARK SOFTWARE. BY USING THE 
+HANDMARK SOFTWARE, YOU AGREE TO BECOME BOUND BY THE TERMS OF THIS LICENSE IF YOU 
+DO NOT AGREE TO THE TERMS OF THIS LICENSE, DO NOT USE THE HANDMARK SOFTWARE.
+The Handmark software ("Software") provided along with this License, is licensed, 
+not sold, to you by Handmark Software Incorporated ("Handmark") for use only under
+the terms of this License, and Handmark reserves any rights not expressly granted
+to you. You own the media on which the Software is recorded, but Handmark and its
+licensors retain ownership of the Software itself.
+
+1. License. This License allows you to:
+(a) Use one copy of the Software on a single computer at a time To "use" the Software
+ means that the Software is either loaded in the temporary memory of a computer or 
+installed on the permanent memory of a computer. You may install the Software on a 
+common storage device which is accessible by multiple computers, provided that if more
+computers have access to the common storage device than the number of licensed copies
+of the Software, you must have some software mechanism which locks-out any concurrent
+users in excess of the number of licensed copies of the Software and additional license
+is not needed for the one copy of Software installed on the common storage device 
+accessed by multiple computers)
+(b) Make one copy of the Software in machine readable form solely for backup purposes. 
+Additionally, only so long as the Software is installed only on the permanent memory 
+of a single desktop computer which is not accessible by multiple computers and that 
+single desktop computer is used by one user for at least 80% of the time the computer 
+is in use, that same user may also make a copy of the Software to use on a portable or
+home computer which is primarily used by such user As an express condition of this 
+License, you must reproduce on each copy any copyright notice or other proprietary notice
+that is on the original copy supplied by Handmark 
+(c) Permanently transfer all your rights under this License to another party by providing
+to such party all copies of the Software licensed under this License together with a 
+copy of this License and the accompanying written materials, provided that the other party 
+reads and agrees to accept the terms and conditions of this License
+
+2. Restrictions. The Software contains trade secrets in its human perceivable form and, 
+to protect them, you may not REVERSE ENGINEER, DECOMPILE, DISASSEMBLE OR OTHERWISE REDUCE
+THE SOFTWARE TO ANY HUMAN PERCEIVABLE FORM YOU MAY NOT MODIFY, ADAPT, TRANSLATE, RENT, 
+LEASE, LOAN OR CREATE DERIVATIVE WORKS BASED UPON THE SOFTWARE OR ANY PART THEREOF
+
+3. Termination. This License is effective until terminated This License will terminate 
+immediately without notice from Handmark or judicial resolution if you fail to comply 
+with any provision of this License Upon such termination you must destroy the Software, 
+all accompanying written materials and all copies thereof, and Sections 5, 6 and 7 will 
+survive any termination
+
+4. Limited Warranty. Handmark warrants for a period of ninety (90) days from your date 
+of purchase that the Software as provided by Handmark will substantially conform to 
+Handmark's published specifications for the Software Handmark's entire liability and 
+your sole and exclusive remedy for any breach of the foregoing limited warranty will 
+be, at Handmark's option, replacement of the media (if any), refund of the purchase 
+price (based on fair market value of the Software) or repair or replacement of the 
+Software. THIS LIMITED WARRANTY IS THE ONLY WARRANTY PROVIDED BY HANDMARK AND HANDMARK
+AND ITS LICENSORS EXPRESSLY DISCLAIM ALL OTHER WARRANTIES, EITHER EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANT ABILITY AND FITNESS FOR 
+A PARTICULAR PURPOSE WITH REGARD TO THE SOFTWARE AND ACCOMPANYING WRITTEN MATERIALS. 
+BECAUSE SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF IMPLIED 
+WARRANTIES, THE ABOVE LIMITATION MAY NOT APPLY TO YOU.
+
+5. Limitation of Remedies and Damages. IN NO EVENT WILL HANDMARK OR ANY OF THE 
+LICENSORS, DIRECTORS, OFFICERS, EMPLOYEES OR AFFILIATES OF ANY OF THE FOREGOING BE 
+LIABLE TO YOU FOR ANY CONSEQUENTIAL, INCIDENTAL, INDIRECT OR SPECIAL DAMAGES WHATSOEVER
+(INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF BUSINESS PROFITS, BUSINESS 
+INTERRUPTION, LOSS OF BUSINESS INFORMATION AND THE LIKE), WHETHER FORESEEABLE OR 
+UNFORESEEABLE, ARISING OUT OF THE USE OF OR INABILITY TO USE THE SOFTWARE OR 
+ACCOMPANYING WRITTEN MATERIALS, REGARDLESS OF THE BASIS OF THE CLAIM AND EVEN IF 
+HANDMARK OR A HANDMARK REPRESENTATIVE HAS BEEN ADVISED OF THE POSSIBILITY OF 
+SUCH DAMAGE.
+Handmark's liability to you for direct damages for any cause whatsoever, and regardless
+of the form of the action, will be limited to the greater of $500 or the money 
+paid for the Software (based on fair market value of the Software) that caused the
+damages.
+THIS LIMITATION WILL NOT APPLY IN CASE OF PERSONAL INJURY ONLY WHERE AND TO THE 
+EXTENT THAT APPLICABLE LAW REQUIRES SUCH LIABILITY BECAUSE SOME JURISDICTIONS DO 
+NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY FOR CON-SEQUENTIAL OR INCIDENTAL
+DAMAGES, THE ABOVE LIMITATION MAY NOT APPLY TO YOU.
+
+6. General. This License will be construed under the laws of the State of Missouri,
+except for that body of law dealing with conflicts of law If any provision of this
+License shall be held by a court of competent jurisdiction to be contrary to law, 
+that provision will be enforced to the maximum extent permissible, and the remaining
+provisions of this License will remain n full force and effect If you are a U S 
+Government user then the Software is provided with "RESTRICTED RIGHTS" as set forth 
+in subparagraphs (c) (l) and( 2) of the Commercial Computer Software Restricted Rights
+clause at FAR52227-19 o sub paragraph (c) (1) (ii) of the Rights in Technical Data 
+and Computer Software clause at DFARS 52 277-7013, as applicable Manufacturer 
+Handmark, Incorporated 105 East 5th Street, Suite 201, Kansas City, MO 64106.

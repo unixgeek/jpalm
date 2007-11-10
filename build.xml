@@ -1,0 +1,120 @@
+<project name="package" default="build" basedir=".">
+    <property name="propertyfile" value="src/net/sourceforge/jpalm/resources/package.properties" />
+    <property file="${propertyfile}" />
+    <property name="verbose" value="false" />
+    <property name="src.source" value="${basedir}/src" />
+    <property name="src.build" value="${basedir}/build.src" />
+    <property name="examples.source" value="${basedir}/examples" />
+    <property name="examples.build" value="${basedir}/build.examples" />
+    <property name="tests.source" value="${basedir}/tests" />
+    <property name="tests.build" value="${basedir}/build.tests" />
+    <property name="dist" value="${basedir}/${package.name}-${package.version}" />
+    <property name="jarfile" value="${package.name}-${package.version}.jar" />
+
+    <path id="runtime.libs">
+        <fileset dir="${basedir}/lib/runtime" includes="*.jar" />
+    </path>
+    <path id="test.libs">
+        <fileset dir="${basedir}/lib/test" includes="*.jar" />
+    </path>
+
+    <target name="doc" description="generate api documenation">
+        <javadoc sourcepath="${src.source}" destdir="${basedir}/doc/api"
+            packagenames="net.sourceforge.jpalm.*">
+            <classpath refid="runtime.libs" />
+        </javadoc>
+        <copy todir="${basedir}/doc/api/net/sourceforge/jpalm/palmdb">
+            <fileset dir="${examples.source}" includes="*PalmDB*" />
+        </copy>
+        <copy todir="${basedir}/doc/api/net/sourceforge/jpalm/mobiledb">
+            <fileset dir="${examples.source}" includes="*MobileDB*" />
+        </copy>
+    </target>
+
+    <target name="build" description="compile source">
+        <mkdir dir="${src.build}" />
+        <copy todir="${src.build}" verbose="${verbose}">
+            <fileset dir="${src.source}" excludes="**/*.java" />
+        </copy>
+        <javac srcdir="${src.source}" destdir="${src.build}" listfiles="${verbose}">
+            <classpath refid="runtime.libs" />
+        </javac>
+    </target>
+
+    <target name="buildExamples" depends="build" description="compile examples code">
+        <mkdir dir="${examples.build}" />
+        <javac srcdir="${examples.source}" destdir="${examples.build}">
+            <classpath location="${src.build}" />
+            <classpath refid="runtime.libs" />
+        </javac>
+    </target>
+
+    <target name="buildTests" depends="build" description="compile unit tests">
+        <mkdir dir="${tests.build}" />
+        <javac srcdir="${tests.source}" destdir="${tests.build}">
+            <classpath location="${src.build}" />
+            <classpath refid="runtime.libs" />
+            <classpath refid="test.libs" />
+        </javac>
+    </target>
+
+    <target name="test" depends="buildTests" description="run unit tests">
+        <junit printsummary="yes" haltonerror="yes" haltonfailure="yes" fork="yes">
+            <batchtest>
+                <fileset dir="${tests.source}" />
+            </batchtest>
+            <formatter type="plain" usefile="false" />
+            <classpath>
+                <pathelement location="${src.build}" />
+                <pathelement location="${tests.build}" />
+                <path refid="runtime.libs" />
+                <path refid="test.libs" />
+            </classpath>
+        </junit>
+    </target>
+
+    <target name="jar" depends="build" description="build jar">
+        <jar destfile="${jarfile}">
+            <fileset dir="${src.build}" />
+        </jar>
+    </target>
+
+    <target name="dist" depends="jar,doc,buildExamples" description="create distribution files">
+        <mkdir dir="${dist}" />
+        <copy todir="${dist}/doc" verbose="${verbose}">
+            <fileset dir="${basedir}/doc" />
+        </copy>
+        <mkdir dir="${dist}/examples" />
+        <copy todir="${dist}/examples" verbose="${verbose}">
+            <fileset dir="${examples.source}" />
+            <fileset dir="${examples.build}" />
+        </copy>
+        <mkdir dir="${dist}/lib" />
+        <copy todir="${dist}/lib" verbose="${verbose}">
+            <fileset dir="${basedir}/lib/runtime" includes="*.jar" />
+        </copy>
+        <copy file="${jarfile}" todir="${dist}" verbose="${verbose}" />
+        <copy file="LICENSE" todir="${dist}" verbose="${verbose}" />
+        <tar destfile="${package.name}-${package.version}.tar.gz" compression="gzip">
+            <tarfileset dir="${dist}" prefix="${package.name}-${package.version}" />
+        </tar>
+        <zip destfile="${package.name}-${package.version}.zip">
+            <zipfileset dir="${dist}" prefix="${package.name}-${package.version}" />
+        </zip>
+    </target>
+
+    <target name="clean" description="remove all build files">
+        <delete dir="${src.build}" verbose="${verbose}" />
+        <delete dir="${examples.build}" verbose="${verbose}" />
+        <delete dir="${tests.build}" verbose="${verbose}" />
+        <delete dir="${basedir}/doc/api" verbose="${verbose}" />
+        <delete file="${jarfile}" verbose="${verbose}" />
+    </target>
+
+    <target name="distClean" depends="clean"
+        description="remove all build files and distribution files">
+        <delete dir="${dist}" verbose="${verbose}" />
+        <delete file="${package.name}-${package.version}.tar.gz" verbose="${verbose}" />
+        <delete file="${package.name}-${package.version}.zip" verbose="${verbose}" />
+    </target>
+</project>

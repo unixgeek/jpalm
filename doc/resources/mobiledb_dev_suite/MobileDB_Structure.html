@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+<HTML>
+<HEAD>
+
+<TITLE>Mobile DB Document Structure</TITLE>
+</HEAD>
+<BODY bgColor=#ffffff>
+<H1>MobileDB Database File Structure</H1>
+<P>This document describes the internal structure of a MobileDB database version 
+  3.0. MobileDB will be able to read older databases buy may change the MDB 2.0 structure into 3.0 when neccessary without warning.
+<H3>DatabaseInfo Structure</H3><SMALL><PRE>typedef struct {
+  UInt16  renamedCategories; /* should be 0x0000 */
+  Char    categoryLabels[dmRecNumCategories][dmCategoryLength];
+  UInt8   categoryUniqIDs[dmRecNumCategories]; /* 0 .. 15 */
+  UInt8   lastUniqID;     /* 15 */
+
+  UInt16  version;      /* current header version */
+  UInt32  lock;         /* hash of password */
+  Boolean dontSearch;   /* true, if DB should be invisible to find */
+  Boolean editOnSelect; /* true, if record should be edited by default */
+<font color="#ff4000">  Boolean longDates;    /* true, if DB should display date in long format */</font>
+  UInt8   reserved[<font color="#ff4000">2</font>];  /* for later use */
+	
+  FilterCriterion filter[3]; /* what the user typed in filters */
+  SortCriterion sort[3];     /* what the user typed in sort */
+	
+} MobileDBInfoType;</PRE></SMALL>
+<P>The category information not being used on the Palm itself, the category 
+names are just being set in order to supply some means of self 
+documentation.</P>
+<P>The current version number is 1. If the version number is not 1, MobileDB 
+considers the DatabaseInfo as corrupted and may set the database info to default 
+values. The version number will increaase when the structure of the database 
+info changes. MobileDB will try its best to upgrade database info data then. 
+</P>
+<P>MobileDB offers some basic security against &quot;glance by&quot; attacks. 
+  The data itself is not being encrypted - the password will be garbled into a 
+  hash number and compared against this value. Zero (0) means: no password has 
+  been entered. </P>
+<SMALL><PRE>typedef struct {
+  Char  field[40]; /* the filter text the user entered */
+  Int8  fieldNo;   /* number of the field, -1 means any field */
+  UInt8 flags;     /* reserved */
+} FilterCriterion;</PRE></SMALL><SMALL><PRE>typedef struct {
+  Int8    fieldNo;    /* field number to sort on, -1 means unused criterion */
+  Boolean descending; /* direction to sort */
+  UInt8   type;       /* 1 means numeric, 0 means lexical, deprecated */
+} SortCriterion;</PRE></SMALL>
+<P>The sort reflect the way the database has been ordered recently. However, if the user entered new data or modifies old data, is is not guaranteed that these records obey that order. The  sort information is only intended to allow the user to memorze the way they have sorted the database last time. The same holds for filter criteria. </P>
+<H3>Category Usage</H3>
+<P>Categories are being used to distinguish data records from records with 
+administrative function. All records of all cetegories contain their data encoded in the same way. The maximum field length however may vary. </P>
+<P>The following Categories are supported: </P>
+<DL>
+    <DT><strong>Unfiled (0)</strong>
+    <DD><p>There should be no record of this category.</p>
+
+    <DT><strong>FieldLabels (1)</strong>
+    <DD><p>A Record which contains the field labels. Maximum length of each field is 25. There should be exactly one record of this category in every database. The number  of fields in this record is being considered as the number of fields for this database. </p>
+    <DT><strong>DataRecords (2)</strong>
+    <DD><p>Data records which are being displayed. Maximum length per field is 1024.</p>
+    <DT><strong>DataRecordsFout (3)</strong>
+    <DD></p>Data records which are currently being filtered out. Maximum length per field is 1024. </p>
+    <DT><strong>Preferences (4)</strong>
+  <DD><p>Contains a record with preference data encoded into normal strings.</p><!--Currently this record is not being used. There should be exactly one record of this category in each database. This record has always 20 fields. The maximum length is currently 25.-->
+   <p>
+     This record has always 20 fields; the maximum length may be 1024 per field. The Fields bear the following contents:
+<p>
+<table border>
+<tr><td>Field 0<td>Some Text (called to Database Information - not to be mixed up the with DB Info Structure) associated to that database. May contain copyright information or similiar data. May be empty.</tr>
+<tr><td>Field 1<td>Contains the hashed value of a key in ASCII form. If this field is empty, it means there is no key and the contents is editable by anyone.</tr>
+</table>
+   </p>
+<p>The name Preferences is historically founded and might be irritating, read it as "Dynamic Info" :-)
+</p>
+  <DT><strong>DataType (5)</strong>
+  <DD><p>Contains a record with type information for each field.<!--Currently all fields  are of type <TT>str</TT>--><p>There should be exactly one record of this category in each database. This record has always 20 fields. The maximum length for each field is 1024. Each field contains a letter indicating the type followed by additional information for that type.
+<p>
+<center><table border cellpadding=2>
+<tr><th>Description<th>Type indicator<th>Additional info stored in type field<th>Data is stored as<th>Bad values treated as</tr>
+<tr><td>Text field with auto capitalize<td><tt>T</tt> (or <tt>str</tt> for historical reasons)<br>This is the fallback for undefined type identifiers.<td>none<td>as is<td>as is</tr>
+<tr><td>Text field without capitalize<td><tt>t<td>none<td>as is<td>as is</tr>
+<tr><td>Numerical field with integer values<td><tt>I<td>The numerical fields may be followed by (exactly) two values in their ASCII representation separated by a semicolon.
+<td>in ASCII form<td>as is</tr>
+<tr><td>Numerical field with float values<td><tt>F<td>see <tt>I<td>in ASCII form<td>as is</tr>
+<tr><td>Checkbox<td><tt>B</tt> (read "boolean")<td>An exclamation marks means that the default is <tt>true</tt><td><tt>true</tt> or <tt>false</tt><td><tt>1</tt>, <tt>true</tt>, <tt>yes</tt> and <tt>ja</tt> are treated as <tt>true</tt>, all others are <tt>false</tt>.</tr>
+<tr><td>Date<td><tt>D<td>If followed by an excalamtion mark, a field will be initalized with the current time or date then the record is being created. Otherwise it will be set to an empty string.
+<td>ASCII Integer representing<br># of days since 1/1/1904<td><tt>no date</tr>
+<tr><td>Time<td><tt>d</tt> (read "small date")<td>see <TT>D<td>ASCII Integer representing<br># of seconds since 0:00<td><tt>no time</tr>
+<tr><td>Selection of a List of values<td>L<td>All possible list entries have to follow after this letter, separated by semicolons. Note that the total length may not exceed 1024!<td>textual label<td>as is</tr>
+<tr><td colspan=5>Whenever the user changes the type of a field, the contents of that field might not be of that type.
+This "bad" data will not be converted automatically!</tr>
+</table></center></p>
+</p>
+  <DT><strong>FieldLengths (6)</strong>
+    
+  <DD><p>Contains the width of each field as text string. There should be exactly 
+  	  one record of this category in each database. This record has always 19 fields. 
+    	<P>Note that it is a problem to save PC based field sizes in this record as 
+    	the PC screen is larger by orders of magnitude compared to the Palm screen.
+    </P>
+    <DT>
+    </dl>
+    <P>All other categories are empty, have an empty name and contain no records.</P>
+<H3>Record structure</H3>
+<P>Each record consists of a record header followed by the fields and a trailing 
+<TT>0xFF</TT>. 
+<CENTER>
+<TABLE cellpadding=1>
+    <TBODY>
+    <TR>
+        
+      <TD width="75">Header:</TD>
+        
+      <TD width="446"> 
+        <TABLE border=1>
+          <TBODY> 
+          <TR> 
+            <TD><TT>0xFF</TT></TD>
+            <TD><TT>0xFF</TT></TD>
+            <TD><TT>0xFF</TT></TD>
+            <TD><TT>0x01</TT></TD>
+            <TD><TT>0xFF</TT></TD>
+            <td><tt>0x00</tt></td>
+<!--            <td><tt>0x00</tt></td> -->
+          </TR>
+          </TBODY> 
+        </TABLE>
+      </TD></TR>
+    <TR>
+        
+      <TD width="75">1st Field:</TD>
+        
+      <TD width="446"> 
+        <TABLE border=1>
+                <TBODY>
+                <TR>
+                    
+            <TD width="140"># of first field (1 byte)</TD>
+            <TD width="247">first field. No zeroes, but may be empty.</TD>
+                    
+            <TD width="10"><TT>0x00</TT></TD>
+          </TR></TBODY></TABLE></TD></TR>
+    <TR>
+        
+      <TD width="75"><EM>n</EM>th Field:</TD>
+        
+      <TD width="446"> 
+        <TABLE border=1>
+                <TBODY>
+                <TR>
+                    <TD># of <EM>n</EM>th field</TD>
+                    <TD><EM>n</EM>th field</TD>
+                    <TD><TT>0x00</TT></TD></TR></TBODY></TABLE></TD></TR>
+    <TR>
+        
+      <TD colSpan=2 height="2">...</TD>
+    <TR>
+    <TR>
+        
+      <TD width="75">Trailer:</TD>
+        
+      <TD width="446"> 
+        <TABLE border=1>
+                <TBODY>
+                <TR>
+                    <TD><TT>0xFF</TT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></CENTER>
+<P>MobileDB can handle fields stored in any order inside each record. The 
+fields are being counted in &quot;C&quot; fashion (starting with zero). </P>
+
+<H3>Legalese</H3>Palm is a trademark of Palm Computing, etc, No warranties, ...
+<HR>
+ 
+<ADDRESS><A href="mailto:palm@klawitter.de">Holger Klawitter</A></ADDRESS>
+<!-- Created: Tue Mar 21 15:27:51 CET 2000 -->
+<!-- hhmts start -->
+Last modified: Tue Apr 17 14:00:16 CEST 2001
+<!-- hhmts end -->
+</BODY></HTML>
