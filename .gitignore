@@ -15,7 +15,3 @@
 .*.swp
 .DS_store
 # Simulated Subversion default ignores end here
-/bin
-/build.examples
-/build.src
-/net.sourceforge.jpalm-*
