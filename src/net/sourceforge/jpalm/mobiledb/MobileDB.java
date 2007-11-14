@@ -419,9 +419,14 @@ public class MobileDB implements PalmDB {
      *             if the class of the serialized object cannot be found
      */
     public Object getUserData() throws IOException, ClassNotFoundException {
-        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(getSortInfo()
-                .serialize());
-        return new ObjectInputStream(byteArrayInputStream).readObject();
+        if (getSortInfo() != null) {
+            ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(getSortInfo()
+                    .serialize());
+            return new ObjectInputStream(byteArrayInputStream).readObject();
+        }
+        else {
+            return null;
+        }
     }
 
     /**

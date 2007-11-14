@@ -108,6 +108,11 @@ public class TestMobileDB extends BaseTestFromResource {
         assertEquals("hi, there", database.getUserData());
     }
 
+    public void testGetUserDataNullSortInfo() throws Exception {
+        database.setSortInfo(null);
+        assertNull(database.getUserData());
+    }
+    
     public void testGetSetUserDataAsByteArray() {
         byte[] data = { 0x02, 0x04, 0x06 };
         database.setUserDataAsByteArray(data);
