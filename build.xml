@@ -19,14 +19,14 @@
     </path>
 
     <target name="doc" description="generate api documenation">
-        <javadoc sourcepath="${src.source}" destdir="${basedir}/doc/api"
+        <javadoc sourcepath="${src.source}" destdir="${basedir}/docs/api"
             packagenames="net.sourceforge.jpalm.*">
             <classpath refid="runtime.libs" />
         </javadoc>
-        <copy todir="${basedir}/doc/api/net/sourceforge/jpalm/palmdb">
+        <copy todir="${basedir}/docs/api/net/sourceforge/jpalm/palmdb">
             <fileset dir="${examples.source}" includes="*PalmDB*" />
         </copy>
-        <copy todir="${basedir}/doc/api/net/sourceforge/jpalm/mobiledb">
+        <copy todir="${basedir}/docs/api/net/sourceforge/jpalm/mobiledb">
             <fileset dir="${examples.source}" includes="*MobileDB*" />
         </copy>
     </target>
@@ -81,8 +81,8 @@
 
     <target name="dist" depends="jar,doc,buildExamples" description="create distribution files">
         <mkdir dir="${dist}" />
-        <copy todir="${dist}/doc" verbose="${verbose}">
-            <fileset dir="${basedir}/doc" />
+        <copy todir="${dist}/docs" verbose="${verbose}">
+            <fileset dir="${basedir}/docs" />
         </copy>
         <mkdir dir="${dist}/examples" />
         <copy todir="${dist}/examples" verbose="${verbose}">
@@ -107,7 +107,7 @@
         <delete dir="${src.build}" verbose="${verbose}" />
         <delete dir="${examples.build}" verbose="${verbose}" />
         <delete dir="${tests.build}" verbose="${verbose}" />
-        <delete dir="${basedir}/doc/api" verbose="${verbose}" />
+        <delete dir="${basedir}/docs/api" verbose="${verbose}" />
         <delete file="${jarfile}" verbose="${verbose}" />
     </target>
 
