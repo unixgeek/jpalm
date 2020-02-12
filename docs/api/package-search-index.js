@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"net.sourceforge.jpalm"},{"l":"net.sourceforge.jpalm.mobiledb"},{"l":"net.sourceforge.jpalm.mobiledb.field.definition"},{"l":"net.sourceforge.jpalm.mobiledb.field.type"},{"l":"net.sourceforge.jpalm.mobiledb.record"},{"l":"net.sourceforge.jpalm.palmdb"}]
